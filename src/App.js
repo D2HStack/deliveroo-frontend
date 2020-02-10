@@ -1,24 +1,44 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useState, useEffect } from "react";
+
+import axios from "axios";
+
+import "./style.css";
+
+// import components
+import Header from "./components/Header";
+import Main from "./components/Main";
 
 function App() {
+  const URL = "https://deliveroo-backend-hd.herokuapp.com/";
+  const [data, setData] = useState({});
+  const [isLoaded, setIsLoaded] = useState(false);
+
+  const fetchData = async URL => {
+    try {
+      const response = await axios.get(URL);
+      setData(response.data);
+      setIsLoaded(true);
+    } catch (error) {
+      alert("An error has occurred ! ");
+    }
+  };
+
+  useEffect(() => {
+    fetchData(URL);
+  }, []);
+
+  console.log("data.restaurant", data.restaurant);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      {isLoaded ? (
+        <>
+          <Header restaurant={data.restaurant}></Header>
+          <Main categories={data.categories}></Main>
+        </>
+      ) : (
+        "Please wait ... "
+      )}
     </div>
   );
 }

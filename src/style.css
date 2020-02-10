@@ -1,0 +1,141 @@
+.bg-header {
+  background-color: #ffffff;
+  /* height: 355px; */
+}
+
+logo.wide {
+  border-bottom: solid 1px #d5d7dc;
+  height: 60px;
+}
+
+.logo-container {
+  width: 1200px;
+  margin: 0 auto;
+}
+
+.logo {
+  height: 60px;
+}
+
+.restaurant {
+  width: 1200px;
+  height: 295px;
+  display: flex;
+  margin: 0 auto;
+  /* border-top: 1px solid #d5d7dc; */
+}
+
+.restaurant-information {
+  margin: 30px 0;
+}
+
+.restaurant-title {
+  font-size: 32px;
+  line-height: 26.7px;
+  font-weight: bold;
+  margin: 30px 0;
+  color: #292d2d;
+}
+
+.restaurant-description {
+  font-size: 19px;
+  line-height: 28.8px;
+  color: #868a8a;
+  margin: 30px 35px 30px 0;
+  text-align: justify;
+}
+
+.restaurant-img {
+  margin: 30px 0;
+  width: 350px;
+  border-radius: 3px;
+}
+
+.bg-main {
+  background-color: #f1f3f3;
+}
+
+.main-container {
+  width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.category.container {
+  margin-top: 25px;
+  width: 825px;
+}
+
+.category-title {
+  font-size: 24px;
+  font-weight: bold;
+  margin: 25px 0;
+}
+
+.meal-container {
+  width: 400px;
+  height: 160px;
+  background-color: #ffffff;
+  border-radius: 3px;
+  display: flex;
+  margin-bottom: 25px;
+}
+
+.meal-information {
+  width: 255px;
+  margin: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.meal-title {
+  font-size: 18px;
+  line-height: 15.6px;
+  color: #2e3333;
+}
+
+.meal-description {
+  font-size: 14px;
+  line-height: 20.8px;
+  color: #808484;
+  display: block;
+  text-overflow: ellipsis;
+  word-wrap: break-word;
+  overflow: hidden;
+  max-height: 41.6px;
+  margin: 10px 0;
+}
+
+.meal-price-pop {
+  /* margin-bottom: 25px; */
+}
+
+.meal-price {
+  font-size: 17px;
+  line-height: 14.7px;
+  color: #808484;
+  margin-right: 15px;
+}
+
+.meal-populaire {
+  font-size: 12px;
+  line-height: 17px;
+  color: #ff8000;
+  font-weight: 900;
+}
+
+.meal-img {
+  height: 130px;
+  width: 130px;
+  margin: 15px;
+  object-fit: cover;
+}
+
+.shop-cart-container {
+  width: 350px;
+  background-color: white;
+  margin-top: 25px;
+}
