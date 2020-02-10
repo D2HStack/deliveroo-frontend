@@ -6,7 +6,7 @@ function Meal(props) {
 
   const formatPrice = price => {
     const priceComma = price.replace(".", ",");
-    return priceComma + " euros";
+    return priceComma;
   };
 
   return (
@@ -14,15 +14,30 @@ function Meal(props) {
       <div className="meal-container">
         <div className="meal-information">
           <p className="meal-title">{meal.title}</p>
-          <p className="meal-description">{meal.description}</p>
+          {meal.description !== "" ? (
+            <p className="meal-description">{meal.description}</p>
+          ) : (
+            ""
+          )}
           <div className="meal-price-pop">
-            <span className="meal-price">{formatPrice(meal.price)}</span>
-            <span className="meal-populaire">
-              {meal.popular && "Star Populaire"}
-            </span>
+            <div className="meal-price">
+              <span>{formatPrice(meal.price)} </span>
+              <i class="fas fa-euro-sign"></i>
+            </div>
+            {meal.popular && (
+              <div className="meal-populaire">
+                <i class="fas fa-star"></i>
+                <span> Populaire</span>
+              </div>
+            )}
           </div>
         </div>
-        <img className="meal-img" rel={meal.title} src={meal.picture}></img>
+        <img
+          alt={meal.title}
+          className="meal-img"
+          rel={meal.title}
+          src={meal.picture}
+        ></img>
       </div>
     </>
   );

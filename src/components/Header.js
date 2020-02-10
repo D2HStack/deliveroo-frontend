@@ -13,6 +13,7 @@ function Header(props) {
           <div className="logo-container">
             <img alt="deliveroo-logo" src={logo} className="logo" />
           </div>
+          <hr className="hr"></hr>
         </div>
 
         <div className="restaurant">

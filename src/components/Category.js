@@ -1,6 +1,5 @@
 import React from "react";
 import Meal from "./Meal";
-import ShopCart from "./ShopCart";
 
 function Category(props) {
   const { name, meals } = props;
@@ -9,8 +8,14 @@ function Category(props) {
   return (
     <>
       <p className="category-title">{name}</p>
-      <div>
-        <Meal meal={meals[0]}></Meal>
+      <div className="meals">
+        {meals.map((meal, index) => {
+          return (
+            <li className="meal">
+              <Meal meal={meal}></Meal>
+            </li>
+          );
+        })}
       </div>
     </>
   );

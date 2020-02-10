@@ -10,13 +10,18 @@ function Main(props) {
     <>
       <div className="bg-main">
         <div className="main-container">
-          <div className="category-container">
-            <Category
-              name={categories[0].name}
-              meals={categories[0].meals}
-            ></Category>
+          <div>
+            {categories.map((category, index) => {
+              return (
+                <Category
+                  className="category-container"
+                  name={category.name}
+                  meals={category.meals}
+                ></Category>
+              );
+            })}
           </div>
-          <div className="shop-cart-container">
+          <div className="shopcart-container">
             <ShopCart></ShopCart>
           </div>
         </div>
