@@ -78,7 +78,6 @@ logo.wide {
 .meals {
   display: flex;
   flex-wrap: wrap;
-  /* justify-content: space-between; */
 }
 
 .meal {
@@ -167,7 +166,7 @@ logo.wide {
   top: 30px;
   display: flex;
   flex-direction: column;
-  padding: 10px 5px 0px 5px;
+  padding: 10px 10px 0px 10px;
 }
 
 .shopcart-button-grey {
@@ -268,5 +267,9 @@ logo.wide {
   display: flex;
   justify-content: center;
   align-items: flex-start;
-  width: fit-content;
+}
+
+.selected-meal-price {
+  width: 60px;
+  text-align: end;
 }

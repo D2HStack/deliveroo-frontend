@@ -38,7 +38,9 @@ function SelectedMeal(props) {
                 {selectedMeals[index].title}
               </span>
             </div>
-            <span>{pointToComma(selectedMeals[index].price)} €</span>
+            <span className="selected-meal-price">
+              {pointToComma(selectedMeals[index].price)} €
+            </span>
           </div>
         ) : (
           ""
