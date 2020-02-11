@@ -6,7 +6,7 @@ function ShopCart(props) {
     <>
       <button className="shopcart-button">Valider mon panier</button>
       <div className="shopcart-details-container">
-        <p>Votre panier est vide</p>
+        <p className="shopcart-message">Votre panier est vide</p>
       </div>
     </>
   );

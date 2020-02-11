@@ -12,12 +12,14 @@ function Main(props) {
         <div className="main-container">
           <div>
             {categories.map((category, index) => {
-              return (
+              return category.meals.length > 0 ? (
                 <Category
                   className="category-container"
                   name={category.name}
                   meals={category.meals}
                 ></Category>
+              ) : (
+                ""
               );
             })}
           </div>

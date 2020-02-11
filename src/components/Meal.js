@@ -32,12 +32,16 @@ function Meal(props) {
             )}
           </div>
         </div>
-        <img
-          alt={meal.title}
-          className="meal-img"
-          rel={meal.title}
-          src={meal.picture}
-        ></img>
+        {meal.picture ? (
+          <img
+            alt={meal.title}
+            className="meal-img"
+            rel={meal.title}
+            src={meal.picture}
+          ></img>
+        ) : (
+          ""
+        )}
       </div>
     </>
   );
