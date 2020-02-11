@@ -2,7 +2,7 @@ import React from "react";
 import Meal from "./Meal";
 
 function Category(props) {
-  const { name, meals } = props;
+  const { name, meals, selectedMeals, setSelectedMeals } = props;
   // console.log("meals", meals);
 
   return (
@@ -12,7 +12,11 @@ function Category(props) {
         {meals.map((meal, index) => {
           return (
             <li key={meal.title} className="meal">
-              <Meal meal={meal}></Meal>
+              <Meal
+                meal={meal}
+                selectedMeals={selectedMeals}
+                setSelectedMeals={setSelectedMeals}
+              ></Meal>
             </li>
           );
         })}

@@ -181,11 +181,12 @@ logo.wide {
 
 .shopcart-details-container {
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  /* justify-content: center; */
   /* align-items: center; */
   padding-top: 15%;
   color: #7f8383;
 }
 
-.shopcart-message {
+.shopcart-meal {
 }

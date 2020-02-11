@@ -3,7 +3,7 @@ import Category from "./Category";
 import ShopCart from "./ShopCart";
 
 function Main(props) {
-  const { categories } = props;
+  const { categories, selectedMeals, setSelectedMeals } = props;
 
   // console.log("categories", categories);
   return (
@@ -16,6 +16,8 @@ function Main(props) {
                 <div key={category.name}>
                   <Category
                     className="category-container"
+                    selectedMeals={selectedMeals}
+                    setSelectedMeals={setSelectedMeals}
                     {...category}
                   ></Category>
                 </div>
@@ -25,7 +27,10 @@ function Main(props) {
             })}
           </div>
           <div className="shopcart-container">
-            <ShopCart></ShopCart>
+            <ShopCart
+              selectedMeals={selectedMeals}
+              setSelectedMeals={setSelectedMeals}
+            ></ShopCart>
           </div>
         </div>
       </div>

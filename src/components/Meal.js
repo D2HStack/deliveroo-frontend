@@ -1,7 +1,8 @@
 import React from "react";
+import lodash from "lodash";
 
 function Meal(props) {
-  const { meal } = props;
+  const { meal, selectedMeals, setSelectedMeals } = props;
   // console.log(meal);
 
   const formatPrice = price => {
@@ -11,7 +12,25 @@ function Meal(props) {
 
   return (
     <>
-      <div key={meal.title} className="meal-container">
+      <div
+        key={meal.title}
+        className="meal-container"
+        onClick={() => {
+          const selectedMealsCopy = [...selectedMeals];
+          const index = lodash.findIndex(selectedMealsCopy, item => {
+            return item.title === meal.title;
+          });
+          if (index === -1) {
+            const selectedMeal = { ...meal };
+            selectedMeal.quantity = 1;
+            selectedMealsCopy.push(selectedMeal);
+          } else {
+            selectedMealsCopy[index].quantity =
+              selectedMealsCopy[index].quantity + 1;
+          }
+          setSelectedMeals(selectedMealsCopy);
+        }}
+      >
         <div
           className={
             meal.picture ? "meal-information" : "meal-information-wide"

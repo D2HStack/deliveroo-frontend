@@ -12,6 +12,7 @@ function App() {
   const URL = "https://deliveroo-backend-hd.herokuapp.com/";
   const [data, setData] = useState({});
   const [isLoaded, setIsLoaded] = useState(false);
+  const [selectedMeals, setSelectedMeals] = useState([]);
 
   const fetchData = async URL => {
     try {
@@ -28,13 +29,17 @@ function App() {
   }, []);
 
   // console.log("data.restaurant", data.restaurant);
-
+  // console.log("selectedMeals", selectedMeals);
   return (
     <div>
       {isLoaded ? (
         <>
           <Header restaurant={data.restaurant}></Header>
-          <Main categories={data.categories}></Main>
+          <Main
+            categories={data.categories}
+            selectedMeals={selectedMeals}
+            setSelectedMeals={setSelectedMeals}
+          ></Main>
         </>
       ) : (
         "Please wait ... "
