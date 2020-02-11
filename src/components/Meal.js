@@ -2,7 +2,7 @@ import React from "react";
 
 function Meal(props) {
   const { meal } = props;
-  console.log(meal);
+  // console.log(meal);
 
   const formatPrice = price => {
     const priceComma = price.replace(".", ",");
@@ -11,8 +11,12 @@ function Meal(props) {
 
   return (
     <>
-      <div className="meal-container">
-        <div className="meal-information">
+      <div key={meal.title} className="meal-container">
+        <div
+          className={
+            meal.picture ? "meal-information" : "meal-information-wide"
+          }
+        >
           <p className="meal-title">{meal.title}</p>
           {meal.description !== "" ? (
             <p className="meal-description">{meal.description}</p>
@@ -24,22 +28,20 @@ function Meal(props) {
               <span>{formatPrice(meal.price)} €</span>
             </div>
             {meal.popular && (
-              <div className="meal-populaire">
-                <i class="fas fa-star"></i>
+              <div className="meal-popular">
+                <i className="fas fa-star"></i>
                 <span> Populaire</span>
               </div>
             )}
           </div>
         </div>
-        {meal.picture ? (
+        {meal.picture && (
           <img
             alt={meal.title}
             className="meal-img"
             rel={meal.title}
             src={meal.picture}
           ></img>
-        ) : (
-          ""
         )}
       </div>
     </>

@@ -5,7 +5,7 @@ import ShopCart from "./ShopCart";
 function Main(props) {
   const { categories } = props;
 
-  console.log("categories", categories);
+  // console.log("categories", categories);
   return (
     <>
       <div className="bg-main">
@@ -13,11 +13,12 @@ function Main(props) {
           <div>
             {categories.map((category, index) => {
               return category.meals.length > 0 ? (
-                <Category
-                  className="category-container"
-                  name={category.name}
-                  meals={category.meals}
-                ></Category>
+                <div key={category.name}>
+                  <Category
+                    className="category-container"
+                    {...category}
+                  ></Category>
+                </div>
               ) : (
                 ""
               );

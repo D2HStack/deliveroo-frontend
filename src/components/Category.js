@@ -3,7 +3,7 @@ import Meal from "./Meal";
 
 function Category(props) {
   const { name, meals } = props;
-  console.log("meals", meals);
+  // console.log("meals", meals);
 
   return (
     <>
@@ -11,7 +11,7 @@ function Category(props) {
       <div className="meals">
         {meals.map((meal, index) => {
           return (
-            <li className="meal">
+            <li key={meal.title} className="meal">
               <Meal meal={meal}></Meal>
             </li>
           );

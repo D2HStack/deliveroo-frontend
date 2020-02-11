@@ -27,7 +27,7 @@ function App() {
     fetchData(URL);
   }, []);
 
-  console.log("data.restaurant", data.restaurant);
+  // console.log("data.restaurant", data.restaurant);
 
   return (
     <div>
