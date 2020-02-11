@@ -26,12 +26,11 @@ function Main(props) {
               );
             })}
           </div>
-          <div className="shopcart-container">
-            <ShopCart
-              selectedMeals={selectedMeals}
-              setSelectedMeals={setSelectedMeals}
-            ></ShopCart>
-          </div>
+
+          <ShopCart
+            selectedMeals={selectedMeals}
+            setSelectedMeals={setSelectedMeals}
+          ></ShopCart>
         </div>
       </div>
     </>

@@ -161,17 +161,19 @@ logo.wide {
   width: 350px;
   background-color: white;
   margin-top: 25px;
-  height: 185px;
+  height: fit-content;
   border-radius: 5px;
   position: sticky;
   top: 30px;
+  display: flex;
+  flex-direction: column;
+  padding: 10px 5px 0px 5px;
 }
 
-.shopcart-button {
+.shopcart-button-grey {
   width: 330px;
   height: 50px;
   border-radius: 5px;
-  margin: 10px;
   color: #8b9a9b;
   font-size: 16px;
   line-height: 13.3px;
@@ -179,14 +181,92 @@ logo.wide {
   background-color: #b2bbbb;
 }
 
+.shopcart-button-blue {
+  width: 330px;
+  height: 50px;
+  border-radius: 5px;
+  color: white;
+  font-size: 16px;
+  line-height: 13.3px;
+  font-weight: bold;
+  background-color: #14c6b5;
+}
+
 .shopcart-details-container {
   display: flex;
   flex-direction: column;
-  /* justify-content: center; */
-  /* align-items: center; */
-  padding-top: 15%;
+  padding-top: 15px;
   color: #7f8383;
+  height: fit-content;
 }
 
-.shopcart-meal {
+.empty-shopcart {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #8e9191;
+  font-size: 16px;
+  line-height: 13.3px;
+  height: 110px;
+}
+
+.subtotal-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  height: 90px;
+  padding: 10px 0;
+}
+
+.subtotal-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #2e3333;
+}
+
+.total {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 18px;
+  font-weight: bold;
+  color: #2e3333;
+  height: 70px;
+}
+
+.selected-meal-container {
+  height: 60px;
+  font-size: 16px;
+  line-height: 13.3px;
+  color: #2e3333;
+  display: flex;
+  align-items: center;
+}
+
+.icon-blue {
+  color: #14c6b5;
+}
+
+.selected-meal-title {
+  margin: 0 10px;
+  height: fit-content;
+}
+
+.selected-meal-information {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 330px;
+}
+
+.selected-meal-quantity-title {
+  display: flex;
+}
+
+.selected-meal-quantity {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  width: fit-content;
 }

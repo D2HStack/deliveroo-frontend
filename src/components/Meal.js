@@ -1,14 +1,10 @@
 import React from "react";
 import lodash from "lodash";
+import pointToComma from "../functions/pointToComma";
 
 function Meal(props) {
   const { meal, selectedMeals, setSelectedMeals } = props;
   // console.log(meal);
-
-  const formatPrice = price => {
-    const priceComma = price.replace(".", ",");
-    return priceComma;
-  };
 
   return (
     <>
@@ -44,7 +40,7 @@ function Meal(props) {
           )}
           <div className="meal-price-pop">
             <div className="meal-price">
-              <span>{formatPrice(meal.price)} €</span>
+              <span>{pointToComma(meal.price)} €</span>
             </div>
             {meal.popular && (
               <div className="meal-popular">

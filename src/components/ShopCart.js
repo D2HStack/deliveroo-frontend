@@ -1,5 +1,6 @@
 import React from "react";
 import SelectedMeal from "./SelectedMeal";
+import pointToComma from "../functions/pointToComma";
 
 function ShopCart(props) {
   const { selectedMeals, setSelectedMeals } = props;
@@ -10,10 +11,16 @@ function ShopCart(props) {
 
   return (
     <>
-      <button className="shopcart-button">Valider mon panier</button>
-      <div className="shopcart-details-container">
+      <div className="shopcart-container">
+        <button
+          className={
+            isSelectedMeals ? "shopcart-button-blue" : "shopcart-button-grey"
+          }
+        >
+          Valider mon panier
+        </button>
         {isSelectedMeals ? (
-          <div>
+          <div className="shopcart-details-container">
             <ul>
               {selectedMeals.map((meal, index) => {
                 subTotal = subTotal + Number(meal.price) * meal.quantity;
@@ -28,17 +35,27 @@ function ShopCart(props) {
                 );
               })}
             </ul>
-            <hr></hr>
-            <p>Sous-total</p>
-            <span>{subTotal}</span>
-            <p>Frais de livraison</p>
-            <span>{deliveryFees}</span>
-            <hr></hr>
-            <p>Total</p>
-            <span>{subTotal + deliveryFees}</span>
+            <hr className="hr"></hr>
+            <div className="subtotal-container">
+              <div className="subtotal-item">
+                <span>Sous-total</span>
+                <span>{pointToComma(subTotal)} €</span>
+              </div>
+              <div className="subtotal-item">
+                <span>Frais de livraison</span>
+                <span>{pointToComma(deliveryFees)} €</span>
+              </div>
+            </div>
+            <hr className="hr"></hr>
+            <div className="total">
+              <span>Total</span>
+              <span>{pointToComma(subTotal + deliveryFees)} €</span>
+            </div>
           </div>
         ) : (
-          "Votre panier est vide"
+          <div className="empty-shopcart">
+            <p>Votre panier est vide</p>
+          </div>
         )}
       </div>
     </>
