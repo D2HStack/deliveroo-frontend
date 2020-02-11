@@ -21,8 +21,7 @@ function Meal(props) {
           )}
           <div className="meal-price-pop">
             <div className="meal-price">
-              <span>{formatPrice(meal.price)} </span>
-              <i class="fas fa-euro-sign"></i>
+              <span>{formatPrice(meal.price)} €</span>
             </div>
             {meal.popular && (
               <div className="meal-populaire">
