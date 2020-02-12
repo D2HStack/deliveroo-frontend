@@ -2,10 +2,10 @@ import React from "react";
 import Category from "./Category";
 import ShopCart from "./ShopCart";
 
-function Main(props) {
-  const { categories, selectedMeals, setSelectedMeals } = props;
-
+function Main({ categories, selectedMeals, setSelectedMeals }) {
+  // const { categories, selectedMeals, setSelectedMeals } = props;
   // console.log("categories", categories);
+
   return (
     <>
       <div className="bg-main">

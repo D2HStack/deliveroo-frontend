@@ -1,8 +1,8 @@
 import React from "react";
 import Meal from "./Meal";
 
-function Category(props) {
-  const { name, meals, selectedMeals, setSelectedMeals } = props;
+function Category({ name, meals, selectedMeals, setSelectedMeals }) {
+  // const { name, meals, selectedMeals, setSelectedMeals } = props;
   // console.log("meals", meals);
 
   return (

@@ -1,8 +1,8 @@
 import React from "react";
 import pointToComma from "../functions/pointToComma";
 
-function SelectedMeal(props) {
-  const { selectedMeals, setSelectedMeals, index } = props;
+function SelectedMeal({ selectedMeals, setSelectedMeals, index }) {
+  // const { selectedMeals, setSelectedMeals, index } = props;
   return (
     <>
       <li className="selected-meal-container">

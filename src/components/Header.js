@@ -3,8 +3,8 @@ import React from "react";
 // import logo
 import logo from "../assets/img/Deliveroo_logo.png";
 
-function Header(props) {
-  const { restaurant } = props;
+function Header({ restaurant }) {
+  // const { restaurant } = props;
   // console.log("restaurant", restaurant);
   return (
     <>

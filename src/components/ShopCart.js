@@ -2,8 +2,8 @@ import React from "react";
 import SelectedMeal from "./SelectedMeal";
 import pointToComma from "../functions/pointToComma";
 
-function ShopCart(props) {
-  const { selectedMeals, setSelectedMeals } = props;
+function ShopCart({ selectedMeals, setSelectedMeals }) {
+  // const { selectedMeals, setSelectedMeals } = props;
 
   let isSelectedMeals = selectedMeals.length > 0;
   let subTotal = 0;

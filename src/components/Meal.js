@@ -2,8 +2,8 @@ import React from "react";
 import lodash from "lodash";
 import pointToComma from "../functions/pointToComma";
 
-function Meal(props) {
-  const { meal, selectedMeals, setSelectedMeals } = props;
+function Meal({ meal, selectedMeals, setSelectedMeals }) {
+  // const { meal, selectedMeals, setSelectedMeals } = props;
   // console.log(meal);
 
   return (
