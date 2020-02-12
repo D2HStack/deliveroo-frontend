@@ -11,14 +11,14 @@ import Main from "./components/Main";
 function App() {
   const URL = "https://deliveroo-backend-hd.herokuapp.com/";
   const [data, setData] = useState({});
-  const [isLoaded, setIsLoaded] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
   const [selectedMeals, setSelectedMeals] = useState([]);
 
   const fetchData = async URL => {
     try {
       const response = await axios.get(URL);
       setData(response.data);
-      setIsLoaded(true);
+      setIsLoading(false);
     } catch (error) {
       alert("An error has occurred ! ");
     }
@@ -32,7 +32,7 @@ function App() {
   // console.log("selectedMeals", selectedMeals);
   return (
     <div>
-      {isLoaded ? (
+      {!isLoading ? (
         <>
           <Header restaurant={data.restaurant}></Header>
           <Main
